@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app">加载中</div>
+  <script>
+    window.$docsify = {
+      name: '开发手册',
+      //配置仓库地址
+      repo: '',
+
+      //加载 _navbar.md
+      loadNavbar: true,
+
+      // 加载 _sidebar.md
+      loadSidebar: true,
+
+      //切换页面后自动跳转到页面顶部
+      auto2top: true,
+
+      //默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级
+      maxLevel:4,
+
+      //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
+      subMaxLevel:3
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
