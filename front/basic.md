@@ -81,8 +81,20 @@ axios主要有以下几个特点：
 
 ## element ui
 
+[Element](https://element.eleme.cn/#/zh-CN/component/installation)基于 Vue 2.0 的组件库，提供了组件丰富功能完备，帮助开发者快速搭建网站。由饿了么公司前端团队开源。
+
+## sass
+
+[Sass](https://www.sasscss.com/documentation)是一种CSS的预编译语言。它提供了变量（variables）、嵌套（nested rules）、混合（mixins）、函数（functions）等功能，并且完全兼容CSS语法。Sass能够帮助复杂的样式表更有条理，并且易于在项目内部或跨项目共享设计
+
 ## webpack
 
-## babel
+[webpack](https://www.webpackjs.com/concepts/)是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个bundle
 
-## eslint
+## babel（了解即可）
+
+[Babel](https://www.babeljs.cn/docs/)是一个工具链，主要用于将采用ECMAScript 2015+ 语法编写的代码转换为向后兼容的JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中
+
+## eslint（了解即可）
+
+[ESLint](https://cn.eslint.org/docs/user-guide/getting-started)是在 ECMAScript/JavaScript代码中识别和报告模式匹配的工具，它的目标是保证代码的一致性和避免错误。在许多方面它和JSLint、JSHint相似
