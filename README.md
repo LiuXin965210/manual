@@ -1,4 +1,3 @@
 # README
 
 > An awesome project.
-

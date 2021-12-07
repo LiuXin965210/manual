@@ -8,12 +8,6 @@
 
 `git config --global user.name author #将用户名设为author`
 
-### fatal: unable to access xxx: OpenSSL SSL_connect: SSL_ERROR
-
-`git config --global --unset http.proxy`
-`git config --global --unset https.proxy`
-`git config --global http.sslVerify "false"`
-
 ### 本地仓库文件上传
 
 1. 项目目录下右键点击 **git bash here**
@@ -33,3 +27,13 @@
 8. 推送代码`git push -u origin master`
 
 9. 输入用户名及密码
+
+### 常见错误
+
+#### fatal: unable to access xxx: OpenSSL SSL_connect: SSL_ERROR
+
+`git config --global http.sslVerify "false"`
+
+`git config --global --unset http.proxy`
+
+`git config --global --unset https.proxy`

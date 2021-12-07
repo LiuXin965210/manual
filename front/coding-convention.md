@@ -358,7 +358,7 @@ div {
 
 **特此说明，增删查改，详情统一使用如下 5 个单词，不得使用其他（目的是为了统一各个端）**
 
-```txt
+```lua
 add / update / delete / detail / get 
 附： 函数方法常用的动词: 
 get 获取/set 设置, 
@@ -581,14 +581,14 @@ export default {
 
 **正例：**
 
-```txt
+```lua
 components
 |- my-component.vue
 ```
 
 **反例：**
 
-```txt
+```lua
 components
 |- myComponent.vue
 |- MyComponent.vue
@@ -598,7 +598,7 @@ components
 
 **正例：**
 
-```txt
+```lua
 components
 |- base-button.vue
 |- base-table.vue
@@ -607,7 +607,7 @@ components
 
 **反例：**
 
-```txt
+```lua
 components
 |- MyButton.vue
 |- VueTable.vue
@@ -618,7 +618,7 @@ components
 
 **正例：**
 
-```txt
+```lua
 components
 |- todo-list.vue
 |- todo-list-item.vue
@@ -628,7 +628,7 @@ components
 
 **反例：**
 
-```txt
+```lua
 components
 |- TodoList.vue
 |- TodoItem.vue
@@ -964,7 +964,7 @@ vue 项目中的所有命名一定要与后端命名统一。
 
 目录名按照上面的命名规范，所有目录均使用 kebab-case 命名。
 
-```txt
+```lua
 src                                  源码目录
 |-- api                              所有api接口
 |-- assets                           静态资源，images, icons, styles等
@@ -1001,7 +1001,7 @@ src                                  源码目录
 
 后端 url： EmployeeController.java
 
-```txt
+```lua
 /employee/add
 /employee/delete/{id}
 /employee/update
@@ -1028,7 +1028,7 @@ deleteEmployee: (employeeId) => {
 
 assets 为静态资源，里面存放 images、styles、icons 等静态资源，静态资源命名格式为 kebab-case
 
-```txt
+```lua
 |assets
 |-- icons
 |-- images
@@ -1041,7 +1041,7 @@ assets 为静态资源，里面存放 images、styles、icons 等静态资源，
 
 此目录应按照组件进行目录划分，目录命名为 kebab-case，组件命名规则也为 kebab-case
 
-```txt
+```lua
 |components
 |-- error-log
 |   |-- index.vue
@@ -1058,7 +1058,7 @@ assets 为静态资源，里面存放 images、styles、icons 等静态资源，
 
 目录结构：
 
-```txt
+```lua
 |constants
 |-- index.js
 |-- role.js
@@ -1118,7 +1118,7 @@ store 按照业务进行拆分不同的 js 文件
 
 命名要与后端、router、api 等保持一致 components 中组件要使用 kebab-case 规则
 
-```txt
+```lua
 |-- views                                    视图目录
 |   |-- role                                 role模块名
 |   |   |-- role-list.vue                    role列表页面

@@ -28,7 +28,8 @@
 
 ## 三、安装vue脚手架
 
-- 推荐安装新版本(自带vue ui) cmd输入`npm install -g @vue/cli` `vue -V`验证是否安装成功
+1. 推荐安装新版本(自带vue ui) cmd输入`npm install -g @vue/cli`
+2. `vue -V`验证是否安装成功
 
 <!-- ## 四、搭建vue项目环境(版本2.x)
 
