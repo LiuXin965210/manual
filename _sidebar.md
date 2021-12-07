@@ -5,3 +5,5 @@
   * [Vue目录结构](/front/catalogue.md "Vue3.x版本默认目录结构")
   * [Vue项目部署](/front/deployment.md "Vue项目部署")
 * [后端](guide.md "The greatest guide in the world")
+* [其他软件](guide.md "开发过程中常用的软件")
+  * [Git](/software/git.md "Git的安装及使用")

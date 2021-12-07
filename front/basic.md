@@ -10,7 +10,13 @@
 2. 事件驱动的异步非阻塞IO模型，无需为每个请求创建新的线程，在处理高并发问题时，有更好的表现
 3. 生态系统非常庞大，npm仓库提供了大量的模块包
 
->异步非阻塞IO：
+>同步和异步的概念描述的是用户线程与内核的交互方式：同步是指用户线程发起IO请求后需要等待或者轮询内核IO操作完成后才能继续执行；而异步是指用户线程发起IO请求后仍继续执行（直接返回），当内核IO操作完成后会通知用户线程，或者调用用户线程注册的回调函数
+
+>阻塞和非阻塞的概念描述的是用户线程调用内核IO操作的方式：阻塞是指IO操作需要彻底完成后才返回到用户空间；而非阻塞是指IO操作被调用后立即返回给用户一个状态值，无需等到IO操作彻底完成
+
+>一个IO操作可以分为两个步骤：发起IO请求和实际的IO操作
+阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。
+同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程（IO操作完成后才能返回），那么就是同步IO，因此阻塞IO、非阻塞IO、IO复用、信号驱动IO都是同步IO，如果不阻塞，而是操作系统做完IO两个阶段的操作再将结果返回给用户线程，那么就是异步IO
 
 ## vue
 
@@ -21,7 +27,7 @@
 3. 采用虚拟dom技术，预先通过js进行大量的计算，最终把dom操作计算出来并优化
 4. 上手容易学习成本低，官网提供中文文档，并且生态系统丰富
 
->虚拟dom：
+>虚拟DOM就是为了解决浏览器性能问题而被设计出来的。如前，若一次操作中有10次更新DOM的动作，虚拟DOM不会立即操作DOM，而是将这10次更新的diff内容保存到本地一个JS对象中，最终将这个JS对象一次性attch到DOM树上，再进行后续操作，避免大量无谓的计算量。所以，用JS对象模拟DOM节点的好处是，页面的更新可以先全部反映在JS对象(虚拟DOM)上，操作内存中的JS对象的速度显然要更快，等更新完成后，再将最终的JS对象映射成真实的DOM，交由浏览器去绘制
 
 ## vue-cli
 
@@ -75,8 +81,20 @@ axios主要有以下几个特点：
 
 ## element ui
 
+[Element](https://element.eleme.cn/#/zh-CN/component/installation)基于 Vue 2.0 的组件库，提供了组件丰富功能完备，帮助开发者快速搭建网站。由饿了么公司前端团队开源。
+
+## sass
+
+[Sass](https://www.sasscss.com/documentation)是一种CSS的预编译语言。它提供了变量（variables）、嵌套（nested rules）、混合（mixins）、函数（functions）等功能，并且完全兼容CSS语法。Sass能够帮助复杂的样式表更有条理，并且易于在项目内部或跨项目共享设计
+
 ## webpack
 
-## babel
+[webpack](https://www.webpackjs.com/concepts/)是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个bundle
 
-## eslint
+## babel（了解即可）
+
+[Babel](https://www.babeljs.cn/docs/)是一个工具链，主要用于将采用ECMAScript 2015+ 语法编写的代码转换为向后兼容的JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中
+
+## eslint（了解即可）
+
+[ESLint](https://cn.eslint.org/docs/user-guide/getting-started)是在 ECMAScript/JavaScript代码中识别和报告模式匹配的工具，它的目标是保证代码的一致性和避免错误。在许多方面它和JSLint、JSHint相似
