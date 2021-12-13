@@ -1,12 +1,10 @@
 ﻿# 环境部署
 
-## 一、安装nodejs
+## 安装nodejs
 
 - [官网下载](http://nodejs.cn/download/current/) 安装完成后cmd输入`node -v`即可验证是否安装成功
-  
-> 版本选择：新版本会有一些新特性的支持，旧版本相对稳定一些，个人有遇到过nodejs版本问题导致有些node modules安装失败，建议选择较低版本的nodejs
 
-## 二、安装Visual Studio Code
+## 安装Visual Studio Code
 
 - vscode是一个前端开发工具，相较于市面主流的开发工具webstorm、HBuilder。免费、轻量、插件丰富是它的优势
 - [官网下载](https://code.visualstudio.com/Download)
@@ -26,7 +24,13 @@
   - vscode-element-helper
   - markdownlint
 
-## 三、安装vue脚手架
+## 离线搭建vue项目
+
+1. 在可联网的环境中，用脚手架工具创建vue项目，创建完成后，执行`npm install`
+2. 将已安装好的项目拷贝至离线环境下使用
+3. [demo项目链接](svn://192.168.2.167/Further/YJU/20.Environment/02.Vue/demo)
+
+## 安装vue脚手架
 
 1. 推荐安装新版本(自带vue ui) cmd输入`npm install -g @vue/cli`
 2. `vue -V`验证是否安装成功
@@ -75,7 +79,7 @@
     9. README.md：项目的说明文档，markdown 格式
     10. xxxx文件：这些是一些配置文件，包括语法配置，git配置等 -->
 
-## 四、搭建vue3.x项目环境(cmd方式)
+## 搭建vue3.x项目环境(联网环境使用cmd)
 
 1. 全局安装vue-cli：`npm install -g @vue/cli`
 2. **cmd**执行命令`vue create 项目名`  
@@ -105,7 +109,7 @@
 9. _Save preset as_ 对该配置起一个别名  
 10. 进入项目目录 命令行执行`npm run serve`
 
-## 五、搭建vue3.x项目环境(vue ui方式)
+## 搭建vue3.x项目环境(联网环境使用vue ui)
 
 1. cmd输入`vue ui`
 
@@ -119,13 +123,7 @@
 7. 版本选择2.x、路由采用hash模式、选择css预处理器和代码格式化工具即可![配置](./assets/environment_vueui_6.png)
 8. 点击运行按钮，即可启动项目![配置](./assets/environment_vueui_7.png)
 
-## 六、离线搭建vue项目
-
-1. 在可联网的环境中，用脚手架工具创建vue项目，创建完成后，执行`npm install`
-2. 将已安装好的项目拷贝至离线环境下使用
-3. [demo项目链接](svn://192.168.2.167/Further/YJU/20.Environment/02.Vue/demo)
-
-## 七、vue脚手架的卸载
+## vue脚手架的卸载
 
 1. 命令行执行`npm uninstall -g vue-cli`
 2. 进入[本机目录](D:\\workbase\\nodejs\\node_global) 看看有无残略的vue文件，存在则删除  

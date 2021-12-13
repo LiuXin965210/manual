@@ -12,9 +12,9 @@
 
 1. 项目目录下右键点击 **git bash here**
 
-2. github上创建新仓库![主界面](/software/assets/git_1.png)
+2. github上创建新仓库![主界面](./assets/git_1.png)
 
-3. 输入仓库名![输入详细信息](/software/assets/git_2.png)
+3. 输入仓库名![输入详细信息](./assets/git_2.png)
 
 4. 初期化.git文件`git init`
 
