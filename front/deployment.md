@@ -31,3 +31,11 @@
 9. 重启nginx`docker restart nginx`
 
 10. 访问ip即可`http://192.168.x.xxx`
+
+## Linux下部署多个前端项目
+
+TODO
+
+## 使用Docker一键发布
+
+
