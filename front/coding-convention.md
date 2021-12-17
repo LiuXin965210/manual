@@ -577,21 +577,22 @@ export default {
 }
 ```
 
-##### 2) 组件文件名为 kebab-case 格式
+##### 2) 组件文件名为 PascalCase 格式
 
 **正例：**
 
 ```lua
 components
-|- my-component.vue
+|- MyComponent
+|- |- index.vue
 ```
 
 **反例：**
 
 ```lua
 components
+|- my-component.vue
 |- myComponent.vue
-|- MyComponent.vue
 ```
 
 ##### 3) 基础组件文件名为 base 开头，使用完整单词而不是缩写
@@ -600,30 +601,37 @@ components
 
 ```lua
 components
-|- base-button.vue
-|- base-table.vue
-|- base-icon.vue
+|- BaseButton
+|- |- index.vue
+|- BaseTable
+|- |- index.vue
+|- BaseIcon
+|- |- index.vue
 ```
 
 **反例：**
 
 ```lua
 components
-|- MyButton.vue
-|- VueTable.vue
-|- Icon.vue
+|- base-button.vue
+|- base-table.vue
+|- base-icon.vue
 ```
 
-##### 4) 和父组件紧密耦合的子组件应该以父组件名作为前缀命名
+##### 4) 和父组件紧密耦合的子组件应该放在父组件目录下
 
 **正例：**
 
 ```lua
 components
-|- todo-list.vue
-|- todo-list-item.vue
-|- todo-list-item-button.vue
-|- user-profile-options.vue （完整单词）
+|- TodoList
+|- |- Item
+|- |- |- index.vue
+|- |- Button
+|- |- |- index.vue
+|- |- Option
+|- |- |- index.vue
+|- |- index.vue
 ```
 
 **反例：**
@@ -633,6 +641,8 @@ components
 |- TodoList.vue
 |- TodoItem.vue
 |- TodoButton.vue
+|- todo-list-item.vue
+|- todo-list-item-button.vue
 |- UProfOpts.vue （使用了缩写）
 ```
 
@@ -969,6 +979,10 @@ src                                  源码目录
 |-- api                              所有api接口
 |-- assets                           静态资源，images, icons, styles等
 |-- components                       公用组件
+|   |-- Sidebar                      侧边栏
+|   |   |-- index.vue                
+|   |-- Navbar                       导航栏
+|   |   |-- index.vue                
 |-- config                           配置信息
 |-- constants                        常量信息，项目所有Enum, 全局常量等
 |-- directives                       自定义指令
@@ -982,11 +996,16 @@ src                                  源码目录
 |-- themes                           自定义样式主题
 |-- views                            视图目录
 |   |-- role                         role模块名
-|   |   |-- role-list.vue            role列表页面
-|   |   |-- role-add.vue             role新建页面
-|   |   |-- role-update.vue          role更新页面
+|   |   |-- role-list                role列表页面
+|   |   |   |-- index.vue            
+|   |   |-- role-add                 role追加页面
+|   |   |   |-- index.vue            
+|   |   |-- role-update              role更新页面
+|   |   |   |-- index.vue            
 |   |   |-- index.less               role模块样式
 |   |   |-- components               role模块通用组件文件夹
+|   |   |   |-- SelectTree           树选择控件
+|   |   |   |   |-- index.vue            
 |   |-- employee                     employee模块
 ```
 
