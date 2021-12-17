@@ -73,3 +73,38 @@ location /api {
 2. 通过浏览器的F12 network功能无法看到代理后的url地址，只能看到请求发出时url，可以通过nginx的log文件**error.log**查看，这个文件主要用来确认我们代理之后的url是否复合我们预期
 
 3. 通过error.log中确认代理后的路径也正确，最后发现是后台程序没有启动好，因为最开始在url上直接输入完成的API请求路径，返回405method类型不匹配（API中method定义的是post）认为后台是可以访问到的，就排除掉了后台的问题
+
+**问题解决：**
+
+重启nacos服务后解决
+
+### gateway异常log io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: No route to host
+
+**问题发现：**
+
+部署微服务项目时，前端调用该项目的API出现错误500，先看部署项目的log`docker logs xxx`，发现后台没有异常log，再次输出**gateway**log，发现异常
+
+```log
+io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: /xxx.xxx.x.xxx:xxxx
+        Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException:
+Error has been observed at the following site(s):
+        |_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+        |_ checkpoint ⇢ HTTP GET "/search/esVisit/search/simple?name=&code=" [ExceptionHandlingWebHandler]
+Stack trace:
+Caused by: java.net.ConnectException: finishConnect(..) failed: Connection refused
+
+```
+
+**问题关键点：**
+
+1.首先定位到出异常的微服务
+
+2.根据log内容分析出并不是gateway自己服务本身的问题，主要原因是**Connection refused**，怀疑部署环境上防火墙新容器的端口没有开放
+
+**问题解决：**
+
+1. 查看开放的端口`firewall-cmd --list-ports`
+
+2. 开放端口xxxx`firewall-cmd --zone=public --add-port=xxxx/tcp --permanent`
+
+3. 重启防火墙`firewall-cmd --reload`
